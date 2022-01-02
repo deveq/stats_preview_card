@@ -14,7 +14,6 @@ section.wrapper {
     border-radius : 0.8rem;
     overflow : hidden;
     margin : 8.8rem auto 0;
-
 }
 
 section.wrapper .upper_container {
@@ -23,18 +22,9 @@ section.wrapper .upper_container {
     background-image : url("../images/image-header-mobile.jpg");
     background-size : 100%;
     position : relative;
-}
-
-section.wrapper .upper_container::before {
-    content : "";
-    display : block;
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
     background-color : hsl(277, 64%, 61%);
-    opacity : 0.6;
+    background-blend-mode: soft-light;
+
 }
 
 section.wrapper .lower_container {
@@ -77,9 +67,76 @@ section.wrapper .lower_container .numbers {
     align-items : center;
     flex-grow : 1;
 }
-
-section.wrapper .lower_container .numbers div:nth-child(2n) {
-    font-size : 1.2rem;
+section.wrapper .lower_container .numbers div {
     margin-bottom : 2.4rem;
 }
+section.wrapper .lower_container .numbers div span {
+    display : block;
+}
+section.wrapper .lower_container .numbers div span:first-of-type {
+    font-size : 2.4rem;
+    font-weight : bold;
+    margin-bottom : 1rem;
+}
+section.wrapper .lower_container .numbers div span:nth-of-type(2) {
+    font-size : 1.2rem;
+}
 
+
+
+
+@media screen and (min-width : 1440px) {
+    section.wrapper {
+        width : 110rem;
+        height : 44.6rem;
+        background-color : hsl(244, 38%, 16%);
+        border-radius : 0.8rem;
+        overflow : hidden;
+        margin : 8.8rem auto 0;
+        display : flex;
+    }
+
+    section.wrapper .upper_container {
+        /* width : 54rem; */
+        flex-basis : 54rem;
+        height : 100%;
+        order : 1;
+        background-image : url("../images/image-header-desktop.jpg");
+        background-size : cover;
+        background-position : center;
+    }
+
+
+    section.wrapper .lower_container {
+        order : -1;
+        flex-grow : 1;
+        display : flex;
+        flex-direction : column;
+        align-items : center;
+        width : 40.3rem;
+        box-sizing: border-box;
+        padding : 7.1rem 7.9rem;
+        text-align: start;
+    }
+
+    section.wrapper .lower_container h1{
+        font-size : 3.6rem;
+        font-weight : bold;
+        line-height : 4.4rem;
+        margin-bottom : 0;
+    }
+    section.wrapper .lower_container p {
+        font-size : 1.5rem;
+        font-weight : normal;
+        line-height : 2.5rem;
+        margin-bottom : 7.2rem;
+        text-align: start;
+    }
+
+    section.wrapper .lower_container .numbers {
+        flex-direction : row;
+        align-self : stretch;
+        justify-content: space-between;
+    }
+    
+}
